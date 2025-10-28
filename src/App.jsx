@@ -5,22 +5,17 @@ import ProductsPage from "./pages/ProductsPage";
 import SingleProductPage from "./pages/SingleProductPage";
 
 function App() {
-
   return (
-    <>
-      <div>
-        <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainLayout/> }>
-            <Route index element={<HomePage /> }/>
-            <Route path="/ProductsPage" element={<ProductsPage/> }/>
-            <Route Path="/ProductsPage/:id" element={<SingleProductPage/>}/>
-          </Route>
-        </Routes>
-        </BrowserRouter>
-      </div>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/ProductsPage" element={<ProductsPage />} />
+          <Route path="/ProductsPage/:id" element={<SingleProductPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

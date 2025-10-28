@@ -1,0 +1,15 @@
+ul li {
+    display:inline-block;
+    list-style-type:none;
+    padding-right: 20px;
+}
+
+ul{
+    margin-top: 0%;
+    background-color:#b7b7b7;
+    border-bottom: 5px solid gray;
+}
+
+.Link{
+    color: black;
+}
