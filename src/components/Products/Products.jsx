@@ -21,7 +21,7 @@ const Products = ({ id, title, description, price, image }) => {
       <h2 className="card__title">{title}</h2>
       <p className="card__description">{description}</p>
       <p className="card__price">Pris: {price} kr</p>
-      <Link to={`//ProductsPage/${id}`}>Læs Mere</Link>
+      <Link to={`/ProductsPage/${id}`}>Læs Mere</Link>
     </div>
   );
 };
