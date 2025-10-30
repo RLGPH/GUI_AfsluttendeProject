@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import HoldUp from "../assets/holdup.jpg";
 
 const SingleProductPage = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const SingleProductPage = () => {
     <div style={{ padding: "2rem" }}>
       <h1>{product.productName}</h1>
       <img
-        src={product.image?.imageUrl || "/placeholder.png"}
+        src={product.image?.imageUrl || HoldUp}
         alt={product.productName}
         style={{ width: "300px", borderRadius: "10px", marginBottom: "1rem" }}
       />

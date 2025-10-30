@@ -4,6 +4,9 @@ const HomePage = () => {
   return (
     <div>
         <p>Home</p>
+        <div>
+          
+        </div>
     </div>
   )
 }

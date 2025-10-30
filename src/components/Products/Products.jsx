@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Products.css";
+import HoldUp from "../../assets/holdup.jpg"
 
 const Products = ({ id, title, description, price, image }) => {
   const baseUrl = "http://casp142b.web.techcollege.dk";
@@ -8,12 +9,12 @@ const Products = ({ id, title, description, price, image }) => {
     <div className="card">
       <img
         className="card__image"
-        src={`${baseUrl}${image?.imageUrl || "/placeholder.png"}`}
+        src={`${baseUrl}${image?.imageUrl || HoldUp}`}
         alt={image?.imageName || "Product image"}
         onError={(e) => {
           if (!e.target.dataset.fallback) {
             e.target.dataset.fallback = "true";
-            e.target.src = "/placeholder.png";
+            e.target.src = HoldUp
           }
         }}
       />
