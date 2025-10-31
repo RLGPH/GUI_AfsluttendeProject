@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Products.css";
 import HoldUp from "../../assets/holdup.jpg";
 
-const Products = ({ id, title, description, price, image }) => {
+const Products = ({ id, title, price, image }) => {
   const baseUrl = "http://casp142b.web.techcollege.dk";
 
   return (
@@ -19,7 +19,6 @@ const Products = ({ id, title, description, price, image }) => {
       />
 
       <h2 className="card__title">{title}</h2>
-      <p className="card__description">{description}</p>
       <p className="card__price">Pris: {price} kr</p>
       <Link to={`/ProductsPage/single/${id}`}>Læs Mere</Link>
     </div>

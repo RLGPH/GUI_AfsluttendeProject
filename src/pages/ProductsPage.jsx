@@ -48,7 +48,6 @@ const ProductsPage = () => {
             id={item.productId}
             title={item.productName}
             price={item.productPrice}
-            description={item.productDescription}
             image={item.image}
           />
         ))}
