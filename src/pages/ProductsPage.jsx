@@ -14,14 +14,19 @@ const ProductsPage = () => {
     async function fetchProducts() {
 
       try {
-        const url = categoryId
-          ? `http://casp142b.web.techcollege.dk/api/Products/Category/${categoryId}`
-          : `http://casp142b.web.techcollege.dk/api/Products`;
-
+        if(categoryId != null){
+          const url = `http://casp142b.web.techcollege.dk/api/Products/Category/${categoryId}`
           const response = await fetch(url);
+          const result = await response.json();
+          setProducts(result);
+        }
+        else{
+          const url = `http://casp142b.web.techcollege.dk/api/Products`
+          const response = await fetch(url);
+          const result = await response.json();
+          setProducts(result);
+        }
 
-        const result = await response.json();
-        setProducts(result);
       } catch (err) {
         setError(err.message);
       } finally {
