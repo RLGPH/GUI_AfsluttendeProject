@@ -11,7 +11,8 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/ProductsPage" element={<ProductsPage />} />
-          <Route path="/ProductsPage/:id" element={<SingleProductPage />} />
+          <Route path="/ProductsPage/category/:categoryId" element={<ProductsPage />} />
+          <Route path="/ProductsPage/single/:id" element={<SingleProductPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Navigation.css"
+import "./Navigation.css";
 
 export const Navigation = () => {
   return (
@@ -12,13 +12,13 @@ export const Navigation = () => {
           <Link className="Link" to="/ProductsPage">Products</Link>
         </li>
         <li>
-          <Link className="Link">Tables</Link>
+          <Link className="Link" to="/ProductsPage/category/1">Tables</Link>
         </li>
         <li>
-          <Link className="Link">GPU</Link>
+          <Link className="Link" to="/ProductsPage/category/2">GPU</Link>
         </li>
         <li>
-          <Link className="Link">Chairs</Link>
+          <Link className="Link" to="/ProductsPage/category/3">Chairs</Link>
         </li>
       </ul>
     </nav>

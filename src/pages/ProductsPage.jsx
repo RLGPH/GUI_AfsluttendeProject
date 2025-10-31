@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import GridContainer from "../components/GridContainer/GridContainer";
 import Products from "../components/Products/Products";
 
 const ProductsPage = () => {
+  const { categoryId } = useParams(); 
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    let hasFetched = false;
 
     async function fetchProducts() {
-      if (hasFetched) return;
-      hasFetched = true;
 
       try {
-        const response = await fetch(
-          "http://casp142b.web.techcollege.dk/api/Products"
-        );
+        const url = categoryId
+          ? `http://casp142b.web.techcollege.dk/api/Products/Category/${categoryId}`
+          : `http://casp142b.web.techcollege.dk/api/Products`;
+
+          const response = await fetch(url);
+
         const result = await response.json();
         setProducts(result);
       } catch (err) {
@@ -28,7 +30,7 @@ const ProductsPage = () => {
     }
 
     fetchProducts();
-  }, []);
+  }, [categoryId]);
 
   if (isLoading) return <p>Indlæser produkter...</p>;
   if (error) return <p>Fejl i hentning af data: {error}</p>;
