@@ -1,4 +1,5 @@
 import React from "react";
+import "./SingleProduct.css"
 import HoldUp from "../../assets/holdup.jpg";
 
 const baseUrl = "http://casp142b.web.techcollege.dk/images/";

@@ -4,29 +4,26 @@ import GridContainer from "../components/GridContainer/GridContainer";
 import Products from "../components/Products/Products";
 
 const ProductsPage = () => {
-  const { categoryId } = useParams(); 
+  const { categoryId } = useParams();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-
     async function fetchProducts() {
-
       try {
-        if(categoryId != null){
-          const url = `http://casp142b.web.techcollege.dk/api/Products/Category/${categoryId}`
+        //this is a bit wet code (wet=write everything twice)
+        if (categoryId != null) {
+          const url = `http://casp142b.web.techcollege.dk/api/Products/Category/${categoryId}`;
+          const response = await fetch(url);
+          const result = await response.json();
+          setProducts(result);
+        } else {
+          const url = `http://casp142b.web.techcollege.dk/api/Products`;
           const response = await fetch(url);
           const result = await response.json();
           setProducts(result);
         }
-        else{
-          const url = `http://casp142b.web.techcollege.dk/api/Products`
-          const response = await fetch(url);
-          const result = await response.json();
-          setProducts(result);
-        }
-
       } catch (err) {
         setError(err.message);
       } finally {
